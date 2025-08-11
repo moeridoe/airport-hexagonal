@@ -15,19 +15,19 @@ Contains the Business logic and use cases. Uses output-ports to interact with ou
 #### Input Ports
 
 Expose interfaces for ingoing adapters to access the application logic of the core.
-In this app we expose use case interface in order for the presentation adapter to interact with the business logic.
+In this app we expose use case interfaces in order for the presentation adapter to interact with the business logic.
 
 #### Output Ports
 
-Define interfaces needed by the core that should be implemented inside the outgoing adapter.
+Define interfaces needed by the core that should be implemented inside the outgoing adapters.
 In this app we define repository interfaces needed by the business logic that the data access adapter will implement.
 
 ### Adapters
 
 #### Presentation Adapter (Ingoing)
 
-Contains the View objects that the user interacts with. Calls the business logic from the underlying Domain Layer.
+Contains the View objects that the user interacts with. Calls the business logic through the input ports. 
 
-### Data Access In-Memory Adapter (Outgoing)
+#### Data Access In-Memory Adapter (Outgoing)
 
-Contains the implementation of the repositories to store and access the data.
+Contains the implementation of the repositories to store and access the data. Implements and provides the output ports. 
